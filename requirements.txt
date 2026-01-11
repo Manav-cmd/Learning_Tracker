@@ -1,7 +1,0 @@
-learning_tracker/
-├── .gitignore
-├── manage.py
-├── requirements.txt   ← HERE
-├── project/
-├── tracker/
-└── templates/
