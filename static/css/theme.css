@@ -1,0 +1,211 @@
+/* =====================================================
+   DESIGN SYSTEM — RESET
+===================================================== */
+
+/* ---------- Light Theme ---------- */
+:root {
+  --bg-main: #f1f5f9;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+
+  --primary: #6366f1;
+  --primary-soft: #eef2ff;
+
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Dark Theme ---------- */
+[data-theme="dark"] {
+  --bg-main: #0b1220;
+  --bg-surface: #111827;
+  --bg-card: #0f172a;
+
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+
+  --primary: #60a5fa;
+  --primary-soft: rgba(96, 165, 250, 0.15);
+
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* =====================================================
+   BASE
+===================================================== */
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar-glass {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--text-main) !important;
+}
+
+.navbar-glass .nav-link {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+}
+
+.navbar-glass .nav-link:hover {
+  color: var(--primary) !important;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.tracker-card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 1.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tracker-card:hover {
+  transform: translateY(-4px);
+}
+
+/* =====================================================
+   HEADINGS & TEXT
+===================================================== */
+
+h1, h2, h3, h4, h5 {
+  color: var(--text-main);
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn-primary {
+  background: var(--primary);
+  border: none;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline-primary {
+  border-color: var(--primary);
+  color: var(--primary);
+  border-radius: 12px;
+}
+
+.btn-outline-primary:hover {
+  background: var(--primary-soft);
+}
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+.form-control {
+  background: transparent;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+/* =====================================================
+   PROGRESS BAR
+===================================================== */
+
+.progress {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .progress {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--primary), #22d3ee);
+}
+
+/* =====================================================
+   BADGES
+===================================================== */
+
+.badge {
+  border-radius: 999px;
+  padding: 0.4em 0.7em;
+  font-weight: 500;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.app-footer {
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+}
+/* =====================================================
+   HERO IMAGE (HOME)
+===================================================== */
+
+.hero-illustration {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+
+  /* visual polish */
+  filter: drop-shadow(0 25px 60px rgba(0, 0, 0, 0.35));
+}
+
+/* Dark mode tuning */
+[data-theme="dark"] .hero-illustration {
+  filter: drop-shadow(0 30px 70px rgba(0, 0, 0, 0.6));
+}
+/* =====================================================
+   ABOUT PAGE
+===================================================== */
+
+.about-image {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.35));
+}

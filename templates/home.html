@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="home-hero">
+  <div class="container">
+    <div class="row align-items-center min-vh-75">
+
+      <!-- LEFT -->
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <h1 class="display-4 fw-bold mb-3">
+          Track Your Learning.<br>
+          <span class="text-primary">Visually.</span>
+        </h1>
+
+        <p class="lead text-muted mb-4">
+          Organize subjects, track progress, and stay consistent —
+          all in one clean dashboard.
+        </p>
+
+        <div class="d-flex gap-3">
+          <a href="{% url 'add_topic' %}" class="btn btn-primary btn-lg">
+            Add Topic
+          </a>
+          <a href="{% url 'view_progress' %}" class="btn btn-outline-primary btn-lg">
+            View Progress
+          </a>
+        </div>
+      </div>
+ 
+ <!-- RIGHT -->
+<div class="col-lg-6 text-center">
+  <img
+    src="{% static 'images/hero.png' %}"
+    alt="Learning illustration"
+    class="hero-illustration"
+  >
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
+

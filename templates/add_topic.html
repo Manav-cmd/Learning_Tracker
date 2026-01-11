@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+
+    <div class="card tracker-card p-4">
+      <h3 class="fw-bold mb-4">Add Learning Topic</h3>
+<form method="post">
+  {% csrf_token %}
+
+  {{ form.non_field_errors }}
+
+  <div class="mb-3">
+    {{ form.subject.label_tag }}
+    {{ form.subject }}
+    {{ form.subject.errors }}
+  </div>
+
+  <div class="mb-3">
+    {{ form.title.label_tag }}
+    {{ form.title.errors }}
+    {{ form.title }}
+  </div>
+
+  <div class="mb-4">
+    {{ form.progress.label_tag }}
+    {{ form.progress.errors }}
+    {{ form.progress }}
+  </div>
+
+  <button class="btn btn-primary w-100 btn-lg">
+    Save Topic
+  </button>
+</form>
+
+    </div>
+
+  </div>
+</div>
+{% endblock %}

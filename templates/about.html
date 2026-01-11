@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row align-items-center">
+
+    <!-- LEFT: TEXT -->
+    <div class="col-lg-6 mb-4 mb-lg-0">
+      <h2 class="fw-bold mb-3">About LearningTracker</h2>
+
+      <p class="hero-subtitle lead mb-4">
+        LearningTracker helps you visually track your learning progress
+        across subjects, topics, and skills — all in one place.
+      </p>
+
+      <p class="hero-subtitle lead mb-4">
+        Instead of scattered notes and forgotten goals, you get a clear,
+        structured view of what you're learning and how far you've come.
+      </p>
+    </div>
+
+    <!-- RIGHT: IMAGE -->
+    <div class="col-lg-6 text-center">
+      <img
+        src="{% static 'images/about.jpg' %}"
+        alt="About LearningTracker"
+        class="about-image"
+      >
+    </div>
+
+  </div>
+</div>
+{% endblock %}
