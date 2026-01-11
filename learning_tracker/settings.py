@@ -1,31 +1,18 @@
 from pathlib import Path
 
-# ======================================================
-# BASE DIR
-# ======================================================
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# ======================================================
-# SECURITY
-# ======================================================
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = "django-insecure-dev-only-key"
 
-SECRET_KEY = "django-insecure-change-this-later"
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
-DEBUG = False
-
-ALLOWED_HOSTS = [
-    "manav-cmd.pythonanywhere.com",
-    "127.0.0.1",
-    "localhost",
-]
+ALLOWED_HOSTS = []
 
 
-# ======================================================
-# APPLICATIONS
-# ======================================================
-
+# Application definition
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -34,19 +21,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    # local apps
+    # local app
     "tracker",
 ]
 
-
-# ======================================================
-# MIDDLEWARE
-# ======================================================
-
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
-
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -54,11 +34,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
-
-# ======================================================
-# URLS & WSGI  ✅ FIXED
-# ======================================================
 
 ROOT_URLCONF = "learning_tracker.urls"
 
@@ -81,10 +56,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "learning_tracker.wsgi.application"
 
 
-# ======================================================
-# DATABASE
-# ======================================================
-
+# Database
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -93,10 +65,7 @@ DATABASES = {
 }
 
 
-# ======================================================
-# PASSWORD VALIDATION
-# ======================================================
-
+# Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -113,10 +82,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# ======================================================
-# INTERNATIONALIZATION
-# ======================================================
-
+# Internationalization
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
@@ -125,20 +91,9 @@ USE_I18N = True
 USE_TZ = True
 
 
-# ======================================================
-# STATIC FILES (PRODUCTION SAFE)
-# ======================================================
-
-STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
-
-STATICFILES_STORAGE = (
-    "whitenoise.storage.CompressedManifestStaticFilesStorage"
-)
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = "static/"
 
 
-# ======================================================
-# DEFAULT PRIMARY KEY
-# ======================================================
-
+# Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
