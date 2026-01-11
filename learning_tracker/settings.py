@@ -57,10 +57,10 @@ MIDDLEWARE = [
 
 
 # ======================================================
-# URLS & WSGI
+# URLS & WSGI  ✅ FIXED
 # ======================================================
 
-ROOT_URLCONF = "project.urls"
+ROOT_URLCONF = "learning_tracker.urls"
 
 TEMPLATES = [
     {
@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "project.wsgi.application"
+WSGI_APPLICATION = "learning_tracker.wsgi.application"
 
 
 # ======================================================
