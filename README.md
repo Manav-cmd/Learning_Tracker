@@ -5,6 +5,19 @@ A clean and minimal Django web app to track learning progress across subjects an
 Built to stay consistent, not overwhelmed.
 
 ---
+## Screenshots
+
+### Home Page
+![Home Page](screenshots/home.jpeg)
+
+### Add Topic
+![Add Topic](screenshots/add_topic.jpeg)
+
+### Progress Dashboard
+![Progress Dashboard](screenshots/progress.jpeg)
+
+### About Page
+![About Page](screenshots/about.jpeg)
 
 ## 🚀 Features
 
