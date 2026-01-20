@@ -11,13 +11,13 @@ Built to stay consistent, not overwhelmed.
 ![Home Page](screenshots/home.jpeg)
 
 ### Add Topic
-![Add Topic](screenshots/add_topic.jpeg)
+![Add Topic](screenshots/about.jpeg)
 
 ### Progress Dashboard
 ![Progress Dashboard](screenshots/progress.jpeg)
 
 ### About Page
-![About Page](screenshots/about.jpeg)
+![About Page](screenshots/add_topic.jpeg)
 
 ## 🚀 Features
 
