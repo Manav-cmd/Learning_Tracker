@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Dashboard</h2>
+
+<p>Total Topics: {{ total_topics }}</p>
+<p>Not Started: {{ not_started }}</p>
+<p>In Progress: {{ in_progress }}</p>
+
+<hr>
+
+<a href="{% url 'add_topic' %}">+ Add Topic</a>
+
+<hr>
+
+{% if topics %}
+    <ul>
+    {% for topic in topics %}
+        <li>
+            <strong>{{ topic.subject }}</strong> — {{ topic.title }}
+            ({{ topic.status }})
+
+            <br>
+
+            <a href="{% url 'add_progress' topic.id %}">Add Progress</a> |
+            <a href="{% url 'update_topic' topic.id %}">Edit</a> |
+            <a href="{% url 'delete_topic' topic.id %}">Delete</a>
+        </li>
+        <hr>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No topics yet.</p>
+{% endif %}
+
+{% endblock %}
