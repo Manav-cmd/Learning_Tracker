@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from datetime import date
-
+from django.db.models import Sum
 from .models import Topic, TopicProgress
 
 
@@ -22,19 +22,28 @@ def about(request):
 # =========================
 # DASHBOARD (core view)
 # =========================
+
 @login_required
 def dashboard(request):
     topics = Topic.objects.filter(user=request.user)
 
+    total_topics = topics.count()
+    active_topics = topics.filter(progress_entries__isnull=False).distinct().count()
+
+    total_minutes = (
+        TopicProgress.objects
+        .filter(topic__user=request.user)
+        .aggregate(total=Sum("effort_minutes"))["total"] or 0
+    )
+
     context = {
         "topics": topics,
-        "total_topics": topics.count(),
-        "not_started": topics.filter(progress_entries__isnull=True).count(),
-        "in_progress": topics.filter(progress_entries__isnull=False).count(),
+        "total_topics": total_topics,
+        "active_topics": active_topics,
+        "total_minutes": total_minutes,
     }
 
     return render(request, "dashboard.html", context)
-
 
 # =========================
 # ADD TOPIC
