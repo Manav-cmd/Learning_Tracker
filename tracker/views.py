@@ -4,6 +4,20 @@ from datetime import date
 from django.db.models import Sum
 from .models import Topic, TopicProgress
 
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
+def create_superuser_once(request):
+    if User.objects.filter(is_superuser=True).exists():
+        return HttpResponse("Superuser already exists")
+
+    User.objects.create_superuser(
+        username="admin",
+        password="admin12345",
+        email="admin@example.com"
+    )
+
+    return HttpResponse("Superuser created")
 
 # =========================
 # HOME (public)
