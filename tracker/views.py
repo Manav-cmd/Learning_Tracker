@@ -43,7 +43,7 @@ def dashboard(request):
 
     total_topics = topics.count()
     in_progress = topics.filter(progress_entries__isnull=False).distinct().count()
-    not_started = total_topics - in_progress
+    not_started = topics.filter(progress_entries__isnull=True).count()
 
     total_minutes = (
         TopicProgress.objects
