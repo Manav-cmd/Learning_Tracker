@@ -150,6 +150,55 @@ body {
 }
 
 /* =====================================================
+   AUTH SCREENS
+===================================================== */
+.auth-body {
+  background: var(--glow-primary), var(--glow-accent), var(--bg-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.auth-shell {
+  min-height: 100vh;
+}
+
+.auth-card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.auth-card .form-control {
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+}
+
+.auth-card .form-control:focus {
+  border-color: color-mix(in srgb, var(--primary) 55%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+.auth-card .btn-primary {
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+.auth-link {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  color: color-mix(in srgb, var(--primary) 75%, transparent);
+}
+
+/* =====================================================
    CARDS
 ===================================================== */
 
