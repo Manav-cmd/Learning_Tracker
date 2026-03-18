@@ -153,7 +153,11 @@ body {
    AUTH SCREENS
 ===================================================== */
 .auth-body {
-  background: var(--glow-primary), var(--glow-accent), var(--bg-main);
+  background-color: var(--bg-main);
+  background-image: var(--glow-primary), var(--glow-accent);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
   display: flex;
   align-items: center;
