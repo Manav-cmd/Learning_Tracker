@@ -15,6 +15,7 @@
   --primary-soft: #eef2ff;
   --accent-blue: rgba(96, 165, 250, 0.10);
   --accent-indigo: rgba(99, 102, 241, 0.08);
+  --accent-cyan: #22d3ee;
   --nav-height: 64px;
 
   --border: rgba(15, 23, 42, 0.08);
@@ -34,6 +35,7 @@
   --primary-soft: rgba(96, 165, 250, 0.15);
   --accent-blue: rgba(96, 165, 250, 0.10);
   --accent-indigo: rgba(99, 102, 241, 0.10);
+  --accent-cyan: #22d3ee;
   --nav-height: 64px;
 
   --border: rgba(255, 255, 255, 0.08);
@@ -45,8 +47,8 @@
 ===================================================== */
 
 body {
-  background: radial-gradient(120% 120% at 20% 20%, rgba(99, 102, 241, 0.08), transparent),
-              radial-gradient(100% 100% at 80% 10%, rgba(34, 211, 238, 0.06), transparent),
+  background: radial-gradient(120% 120% at 20% 20%, color-mix(in srgb, var(--primary) 28%, transparent), transparent),
+              radial-gradient(100% 100% at 80% 10%, color-mix(in srgb, var(--accent-cyan) 24%, transparent), transparent),
               var(--bg-main);
   color: var(--text-main);
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -93,7 +95,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--primary), #22d3ee);
+  background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
   color: #fff;
   font-size: 1.1rem;
 }
@@ -108,7 +110,7 @@ body {
 
 .navbar-glass .nav-link:hover {
   color: var(--primary) !important;
-  background: rgba(99, 102, 241, 0.08);
+  background: color-mix(in srgb, var(--primary) 16%, transparent);
 }
 
 .btn-ghost {
@@ -122,8 +124,8 @@ body {
 
 .btn-ghost:hover {
   color: var(--primary);
-  border-color: rgba(99, 102, 241, 0.4);
-  background: rgba(99, 102, 241, 0.08);
+  border-color: color-mix(in srgb, var(--primary) 35%, transparent);
+  background: color-mix(in srgb, var(--primary) 14%, transparent);
 }
 
 .btn-icon {
@@ -194,7 +196,7 @@ h1, h2, h3, h4, h5 {
 
 .gradient-text {
   color: var(--primary);
-  background: linear-gradient(120deg, var(--primary), #22d3ee);
+  background: linear-gradient(120deg, var(--primary), var(--accent-cyan));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -217,7 +219,7 @@ h1, h2, h3, h4, h5 {
 ===================================================== */
 
 .btn-primary {
-  background: linear-gradient(120deg, var(--primary), #22d3ee);
+  background: linear-gradient(120deg, var(--primary), var(--accent-cyan));
   border: none;
   font-weight: 600;
   border-radius: 12px;
@@ -234,12 +236,12 @@ h1, h2, h3, h4, h5 {
   border-color: var(--primary);
   color: var(--primary);
   border-radius: 12px;
-  background: rgba(99, 102, 241, 0.06);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
   transition: all 0.25s ease;
 }
 
 .btn-outline-primary:hover {
-  background: rgba(99, 102, 241, 0.14);
+  background: color-mix(in srgb, var(--primary) 18%, transparent);
   color: var(--primary);
   transform: translateY(-1px);
 }
@@ -279,7 +281,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .progress-bar {
-  background: linear-gradient(90deg, var(--primary), #22d3ee);
+  background: linear-gradient(90deg, var(--primary), var(--accent-cyan));
 }
 
 /* =====================================================
@@ -382,7 +384,7 @@ h1, h2, h3, h4, h5 {
   gap: 0.4rem;
   padding: 0.55rem 0.9rem;
   border-radius: 999px;
-  background: rgba(99, 102, 241, 0.12);
+  background: color-mix(in srgb, var(--primary) 20%, transparent);
   color: var(--primary);
   font-weight: 600;
 }
@@ -479,7 +481,7 @@ h1, h2, h3, h4, h5 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary), #22d3ee);
+  background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
   color: white;
   font-weight: 700;
 }
