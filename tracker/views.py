@@ -39,10 +39,11 @@ def about(request):
 
 @login_required
 def dashboard(request):
-    topics = Topic.objects.filter(user=request.user)
+    topics = Topic.objects.filter(user=request.user).prefetch_related("progress_entries")
 
     total_topics = topics.count()
-    active_topics = topics.filter(progress_entries__isnull=False).distinct().count()
+    in_progress = topics.filter(progress_entries__isnull=False).distinct().count()
+    not_started = total_topics - in_progress
 
     total_minutes = (
         TopicProgress.objects
@@ -53,7 +54,8 @@ def dashboard(request):
     context = {
         "topics": topics,
         "total_topics": total_topics,
-        "active_topics": active_topics,
+        "in_progress": in_progress,
+        "not_started": not_started,
         "total_minutes": total_minutes,
     }
 

@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+*.pot
+*.mo
+*.swp
+*.tmp
+
+# Virtual environments
+venv/
+.venv/
+
+# Django static files build output
+staticfiles/
