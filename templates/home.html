@@ -48,12 +48,20 @@
             class="hero-illustration"
           >
           <div class="floating-card shadow-sm">
-            <p class="fw-semibold mb-1">Today’s focus</p>
+            <p class="fw-semibold mb-1" id="todays-focus-label">Today’s focus</p>
             <div class="d-flex align-items-center gap-2 mb-2">
               <span class="badge bg-success-subtle text-success-emphasis">On track</span>
               <small class="text-muted">3h planned</small>
             </div>
-            <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+            <div
+              class="progress"
+              role="progressbar"
+              aria-labelledby="todays-focus-label"
+              aria-valuetext="72% complete"
+              aria-valuenow="72"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
               <div class="progress-bar" style="width: 72%"></div>
             </div>
           </div>

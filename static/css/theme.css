@@ -193,6 +193,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .gradient-text {
+  color: var(--primary);
   background: linear-gradient(120deg, var(--primary), #22d3ee);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
