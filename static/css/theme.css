@@ -13,8 +13,8 @@
 
   --primary: #6366f1;
   --primary-soft: #eef2ff;
-  --accent-blue: rgba(96, 165, 250, 0.12);
-  --accent-indigo: rgba(99, 102, 241, 0.10);
+  --accent-blue: rgba(96, 165, 250, 0.10);
+  --accent-indigo: rgba(99, 102, 241, 0.08);
 
   --border: rgba(15, 23, 42, 0.08);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -31,8 +31,8 @@
 
   --primary: #60a5fa;
   --primary-soft: rgba(96, 165, 250, 0.15);
-  --accent-blue: rgba(96, 165, 250, 0.14);
-  --accent-indigo: rgba(99, 102, 241, 0.12);
+  --accent-blue: rgba(96, 165, 250, 0.10);
+  --accent-indigo: rgba(99, 102, 241, 0.10);
 
   --border: rgba(255, 255, 255, 0.08);
   --shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
@@ -51,8 +51,8 @@ body {
 }
 
 main {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 /* =====================================================
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 600;
   border-radius: 12px;
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease, opacity 0.3s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .btn-primary:hover {
