@@ -200,7 +200,6 @@ h1, h2, h3, h4, h5 {
   color: var(--primary);
   background: linear-gradient(120deg, var(--primary), var(--accent-cyan));
   background-clip: text;
-  -moz-background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -209,6 +208,14 @@ h1, h2, h3, h4, h5 {
   .gradient-text {
     background: none;
     color: var(--primary);
+  }
+}
+
+@media (prefers-contrast: more) {
+  .gradient-text {
+    background: none;
+    color: var(--primary);
+    -webkit-text-fill-color: currentColor;
   }
 }
 
@@ -233,6 +240,7 @@ h1, h2, h3, h4, h5 {
   border: none;
   font-weight: 600;
   border-radius: 12px;
+  color: #ffffff;
   box-shadow: var(--shadow);
   transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
 }
