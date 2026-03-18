@@ -1,11 +1,14 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
 from datetime import date
-from django.db.models import Sum
-from .models import Topic, TopicProgress
 
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.db.models import Sum
 from django.http import HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404
+
+from .forms import SignUpForm
+from .models import Topic, TopicProgress
 
 def create_superuser_once(request):
     if User.objects.filter(is_superuser=True).exists():
@@ -31,6 +34,25 @@ def home(request):
 # =========================
 def about(request):
     return render(request, "about.html")
+
+
+# =========================
+# SIGNUP (public)
+# =========================
+def signup(request):
+    if request.user.is_authenticated:
+        return redirect("dashboard")
+
+    if request.method == "POST":
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("dashboard")
+    else:
+        form = SignUpForm()
+
+    return render(request, "signup.html", {"form": form})
 
 
 # =========================
