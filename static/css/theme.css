@@ -20,6 +20,8 @@
 
   --border: rgba(15, 23, 42, 0.08);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --glow-primary: radial-gradient(120% 120% at 20% 20%, color-mix(in srgb, var(--primary) 28%, transparent), transparent);
+  --glow-accent: radial-gradient(100% 100% at 80% 10%, color-mix(in srgb, var(--accent-cyan) 24%, transparent), transparent);
 }
 
 /* ---------- Dark Theme ---------- */
@@ -40,6 +42,8 @@
 
   --border: rgba(255, 255, 255, 0.08);
   --shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  --glow-primary: radial-gradient(120% 120% at 20% 20%, color-mix(in srgb, var(--primary) 28%, transparent), transparent);
+  --glow-accent: radial-gradient(100% 100% at 80% 10%, color-mix(in srgb, var(--accent-cyan) 24%, transparent), transparent);
 }
 
 /* =====================================================
@@ -47,9 +51,7 @@
 ===================================================== */
 
 body {
-  background: radial-gradient(120% 120% at 20% 20%, color-mix(in srgb, var(--primary) 28%, transparent), transparent),
-              radial-gradient(100% 100% at 80% 10%, color-mix(in srgb, var(--accent-cyan) 24%, transparent), transparent),
-              var(--bg-main);
+  background: var(--glow-primary), var(--glow-accent), var(--bg-main);
   color: var(--text-main);
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;
@@ -200,6 +202,13 @@ h1, h2, h3, h4, h5 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@supports not (-webkit-background-clip: text) {
+  .gradient-text {
+    background: none;
+    color: var(--primary);
+  }
 }
 
 .text-link {
